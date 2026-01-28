@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mamma Mia Pizzeria | Authentic Italian Pizza</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Loading Overlay -->
+    <div id="loading-overlay">
+        <div class="spinner"></div>
+        <p>Loading delicious pizzas...</p>
+    </div>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-pizza-slice"></i>
+                    <h1>Mamma Mia Pizzeria</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home-section" class="nav-link active" id="home-link">Home</a></li>
+                        <li><a href="#menu-section" class="nav-link" id="menu-link">Menu</a></li>
+                        <li><a href="#drinks-section" class="nav-link" id="drinks-link">Drinks</a></li>
+                        <li><a href="#about-section" class="nav-link" id="about-link">About Us</a></li>
+                        <li><a href="#contact-section" class="nav-link" id="contact-link">Contact</a></li>
+                        <li><a href="#reservation-section" class="nav-link" id="reservation-link">Reservation</a></li>
+                    </ul>
+                </nav>
+                <div class="header-actions">
+                    <div class="cart-icon" id="cart-icon">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="cart-count" id="cart-count">0</span>
+                    </div>
+                    <button class="cta-button" id="order-online-btn">Order Online</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home-section">
+        <div class="container">
+            <div class="hero-content">
+                <h2>Authentic Italian Pizza Since 1995</h2>
+                <p>Handcrafted with the finest ingredients and traditional recipes passed down through generations</p>
+                <button class="cta-button" id="view-menu-btn">View Our Menu</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Signature Pizzas Section (Moved to top after hero) -->
+    <section class="signature-pizzas-section" id="signature-pizzas-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Signature Pizzas</h2>
+                <p>Handcrafted with love using traditional Italian recipes</p>
+            </div>
+            
+            <!-- Category Filter -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="all">All Pizzas</button>
+                <button class="filter-btn" data-category="veg">Vegetarian</button>
+                <button class="filter-btn" data-category="non-veg">Non-Vegetarian</button>
+            </div>
+            
+            <!-- Loading Indicator -->
+            <div class="loading" id="pizza-loading">
+                <i class="fas fa-spinner fa-spin"></i> Loading pizzas...
+            </div>
+            
+            <!-- Pizza Grid -->
+            <div class="pizza-grid" id="pizza-grid">
+                <!-- Pizza cards will be dynamically loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Menu Section -->
+    <section class="full-menu-section" id="menu-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Full Menu</h2>
+                <p>Explore our complete selection of authentic Italian pizzas</p>
+            </div>
+            <div class="menu-grid" id="menu-grid">
+                <!-- Menu items will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Drinks Section -->
+    <section class="drinks-section" id="drinks-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Drinks & Beverages</h2>
+                <p>Perfect companions for your pizza</p>
+            </div>
+            <div class="drinks-grid" id="drinks-grid">
+                <!-- Drinks will be loaded here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h3>Address</h3>
+                            <p>123 Pizza Street, Little Italy</p>
+                            <p>New York, NY 10013</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h3>Phone</h3>
+                            <p>(212) 555-PIZZA</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h3>Email</h3>
+                            <p>info@mammamiapizzeria.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h3>Opening Hours</h3>
+                            <p>Monday - Sunday: 11:00 AM - 11:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form">
+                    <h3>Send us a Message</h3>
+                    <form id="contact-form">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <button type="submit" class="submit-btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservation Section -->
+    <section class="reservation-section" id="reservation-section">
+        <div class="container">
+            <div class="section-title">
+                <h2>Table Reservation</h2>
+                <p>Book a table for your special occasion</p>
+            </div>
+            <div class="reservation-form-container">
+                <form id="reservation-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-name">Full Name *</label>
+                            <input type="text" id="reservation-name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-email">Email *</label>
+                            <input type="email" id="reservation-email" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-phone">Phone *</label>
+                            <input type="tel" id="reservation-phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-guests">Number of Guests *</label>
+                            <select id="reservation-guests" required>
+                                <option value="">Select...</option>
+                                <option value="1">1 Person</option>
+                                <option value="2">2 People</option>
+                                <option value="3">3 People</option>
+                                <option value="4">4 People</option>
+                                <option value="5">5 People</option>
+                                <option value="6">6 People</option>
+                                <option value="7">7 People</option>
+                                <option value="8">8 People</option>
+                                <option value="9">9+ People</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="reservation-date">Date *</label>
+                            <input type="date" id="reservation-date" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="reservation-time">Time *</label>
+                            <select id="reservation-time" required>
+                                <option value="">Select Time</option>
+                                <option value="11:00">11:00 AM</option>
+                                <option value="12:00">12:00 PM</option>
+                                <option value="13:00">1:00 PM</option>
+                                <option value="14:00">2:00 PM</option>
+                                <option value="17:00">5:00 PM</option>
+                                <option value="18:00">6:00 PM</option>
+                                <option value="19:00">7:00 PM</option>
+                                <option value="20:00">8:00 PM</option>
+                                <option value="21:00">9:00 PM</option>
+                                <option value="22:00">10:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="reservation-notes">Special Requests (Optional)</label>
+                        <textarea id="reservation-notes" rows="3" placeholder="Birthday, anniversary, allergies, etc."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Make Reservation</button>
+                </form>
+                <div class="reservation-info">
+                    <h3>Reservation Policy</h3>
+                    <ul>
+                        <li>Reservations are held for 15 minutes past the booking time</li>
+                        <li>Please arrive 10 minutes before your reservation</li>
+                        <li>For groups of 8+, please call us directly</li>
+                        <li>Cancellations must be made 2 hours in advance</li>
+                    </ul>
+                    <div class="contact-info">
+                        <p><i class="fas fa-phone"></i> Call: (212) 555-PIZZA</p>
+                        <p><i class="fas fa-clock"></i> Hours: 11:00 AM - 11:00 PM Daily</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Modal (Hidden by default, shows when clicking About Us) -->
+    <div class="about-modal" id="about-modal">
+        <div class="about-modal-content">
+           <button class="close-about-modal">&times;</button>
+            <div class="about-section">
+                <div class="section-title">
+                    <h2>About Mamma Mia Pizzeria</h2>
+                </div>
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>Our Story</h3>
+                        <p>   Founded in 1995 by Italian immigrant Giovanni Rossi, Mamma Mia Pizzeria brings authentic Neapolitan pizza to your table. Using traditional recipes passed down through generations and the finest imported ingredients from Italy.</p>
+                        <p>Our wood-fired ovens reach 900°F, cooking each pizza in just 90 seconds for that perfect crisp crust and smoky flavor.</p>
+                        
+                        <h3>Our Mission</h3>
+                        <p>To bring authentic Italian pizza experience to every home. We believe in using only the freshest ingredients, traditional cooking methods, and serving each pizza with passion.</p>
+                        
+                        <h3>Our Values</h3>
+                        <ul class="values-list">
+                            <li><i class="fas fa-check-circle"></i> <strong>Quality:</strong> Only the finest ingredients</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Tradition:</strong> Authentic Italian recipes</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Freshness:</strong> Made to order, never pre-made</li>
+                            <li><i class="fas fa-check-circle"></i> <strong>Service:</strong> Delivered with a smile</li>
+                        </ul>
+                        
+                        <div class="about-stats">
+                            <div class="stat">
+                                <h4>30+</h4>
+                                <p>Years of Experience</p>
+                            </div>
+                            <div class="stat">
+                                <h4>50+</h4>
+                                <p>Pizza Varieties</p>
+                            </div>
+                            <div class="stat">
+                                <h4>10K+</h4>
+                                <p>Happy Customers</p>
+                            </div>
+                            <div class="stat">
+                                <h4>100%</h4>
+                                <p>Customer Satisfaction</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-images">
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136" alt="Our Pizzeria">
+                            <p>Our traditional wood-fired oven</p>
+                        </div>
+                        <div class="about-image">
+                            <img src="https://images.unsplash.com/photo-1579751626657-72bc17010498" alt="Fresh Ingredients">
+                            <p>Fresh ingredients daily</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <i class="fas fa-pizza-slice"></i>
+                        <h3>Mamma Mia Pizzeria</h3>
+                    </div>
+                    <p>Authentic Italian pizza since 1995. Made with love, served with passion.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home-section">Home</a></li>
+                        <li><a href="#menu-section">Menu</a></li>
+                        <li><a href="#drinks-section">Drinks</a></li>
+                        <li><a href="#" class="nav-link" id="about-link">About Us</a></li>
+                        <li><a href="#contact-section">Contact</a></li>
+                        <li><a href="#reservation-section">Reservation</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Pizza Street, NY 10013</li>
+                        <li><i class="fas fa-phone"></i> (212) 555-PIZZA</li>
+                        <li><i class="fas fa-envelope"></i> info@mammamiapizzeria.com</li>
+                        <li><i class="fas fa-clock"></i> Open 7 Days: 11AM - 11PM</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Newsletter</h4>
+                    <p>Subscribe for special offers and updates</p>
+                    <form id="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit" class="subscribe-btn">Subscribe</button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Mamma Mia Pizzeria. All rights reserved. | Made with <i class="fas fa-heart"></i> and <i class="fas fa-pizza-slice"></i></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS -->
+
+    <!-- Cart Modal -->
+    <div class="cart-modal" id="cart-modal">
+        <div class="cart-content">
+            <div class="cart-header">
+                <h3>Your Cart</h3>
+                <button class="close-cart" id="close-cart">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <div class="empty-cart">Your cart is empty</div>
+            </div>
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cart-total-amount">$0.00</span>
+            </div>
+            <div class="cart-actions">
+                <button class="btn-secondary" id="continue-shopping">Continue Shopping</button>
+                <button class="btn-primary" id="checkout-btn" disabled>Proceed to Checkout</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Checkout Modal -->
+    <div class="checkout-modal" id="checkout-modal">
+        <div class="checkout-content">
+            <div class="checkout-header">
+                <h3>Checkout</h3>
+                <button class="close-checkout" id="close-checkout">&times;</button>
+            </div>
+            <form id="checkout-form">
+                <div class="form-group">
+                    <label for="customer-name">Full Name *</label>
+                    <input type="text" id="customer-name" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="customer-email">Email *</label>
+                    <input type="email" id="customer-email" required placeholder="your@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="customer-phone">Phone Number *</label>
+                    <input type="tel" id="customer-phone" required placeholder="03XX-XXXXXXX">
+                </div>
+                <div class="form-group">
+                    <label for="customer-address">Full Delivery Address *</label>
+                    <textarea id="customer-address" rows="3" required placeholder="House#, Street, Area, City"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="order-notes">Special Instructions (Optional)</label>
+                    <textarea id="order-notes" rows="2" placeholder="Any special requests?"></textarea>
+                </div>
+                <div class="order-summary">
+                    <h4>Order Summary</h4>
+                    <div id="order-items-summary"></div>
+                    <div class="order-total">
+                        <span>Total:</span>
+                        <span id="checkout-total">$0.00</span>
+                    </div>
+                </div>
+                <button type="submit" class="submit-btn">Place Order</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Order Confirmation Modal -->
+    <div class="confirmation-modal" id="confirmation-modal">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Thank You for Your Order!</h3>
+            <div class="delivery-message">
+                <p id="confirmation-message"></p>
+                <div class="delivery-time">
+                    <i class="fas fa-clock"></i>
+                    <p><strong>Your order will be delivered in 30 minutes!</strong></p>
+                </div>
+                <p class="thank-you-note">Thank you for choosing Mamma Mia Pizzeria!</p>
+            </div>
+            <div class="confirmation-actions">
+                <button class="btn-primary" id="track-order-btn">Track Order</button>
+                <button class="btn-secondary" id="home-after-order">Back to Home</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Reservation Confirmation Modal -->
+    <div class="reservation-confirmation-modal" id="reservation-confirmation-modal">
+        <div class="confirmation-content">
+            <div class="confirmation-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Reservation Confirmed!</h3>
+            <div id="reservation-details"></div>
+            <div class="confirmation-actions">
+                <button class="btn-primary" id="print-reservation">Print</button>
+                <button class="btn-secondary" id="close-reservation-modal">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pizza Form Section (Hidden by default) -->
+    <section class="pizza-form-section" id="pizza-form-section" style="display: none;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Add New Pizza (Developer Only)</h2>
+            </div>
+            <div class="form-container">
+                <form id="pizza-form">
+                    <div class="form-group">
+                        <label for="pizza-name">Pizza Name</label>
+                        <input type="text" id="pizza-name" class="form-control" placeholder="e.g., Margherita Supreme" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="pizza-description">Description</label>
+                        <textarea id="pizza-description" class="form-control" rows="3" placeholder="Describe your pizza..." required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="pizza-image">Image URL</label>
+                        <input type="text" id="pizza-image" class="form-control" placeholder="https://images.unsplash.com/photo-1604068549290-dea0e4a305ca" required>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="pizza-price-small">Price (Small)</label>
+                            <input type="number" id="pizza-price-small" class="form-control" placeholder="12.99" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pizza-price-medium">Price (Medium)</label>
+                            <input type="number" id="pizza-price-medium" class="form-control" placeholder="15.99" step="0.01" min="0" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="pizza-price-large">Price (Large)</label>
+                            <input type="number" id="pizza-price-large" class="form-control" placeholder="18.99" step="0.01" min="0" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Category</label>
+                        <div class="radio-group">
+                            <div class="radio-option">
+                                <input type="radio" id="veg" name="category" value="veg" checked>
+                                <label for="veg">Vegetarian</label>
+                            </div>
+                            <div class="radio-option">
+                                <input type="radio" id="non-veg" name="category" value="non-veg">
+                                <label for="non-veg">Non-Vegetarian</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="pizza-ingredients">Ingredients (comma separated)</label>
+                        <input type="text" id="pizza-ingredients" class="form-control" placeholder="Tomato sauce, mozzarella, basil, olive oil" required>
+                    </div>
+                    <button type="submit" class="submit-btn">Add Pizza</button>
+                    <button type="button" class="cancel-btn" id="hide-form-btn">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notification Container -->
+    <div id="notification-container"></div>
+
+    <!-- JavaScript Files -->
+    <script src="js/app.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>

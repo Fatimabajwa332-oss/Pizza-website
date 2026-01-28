@@ -1,0 +1,1577 @@
+/* style.css - Professional Pizza Restaurant Website */
+:root {
+    --primary: #c41e3a;
+    --primary-dark: #a1162a;
+    --secondary: #f8b500;
+    --dark: #2c2c2c;
+    --light: #f8f9fa;
+    --gray: #6c757d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: var(--dark);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: var(--dark);
+    color: white;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo i {
+    color: var(--secondary);
+    font-size: 28px;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+nav a:hover {
+    color: var(--secondary);
+}
+
+.cta-button {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+}
+
+.hero h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: 20px;
+    max-width: 700px;
+    margin: 0 auto 30px;
+}
+
+/* Pizza Form Section */
+.pizza-form-section {
+    background-color: white;
+    padding: 60px 0;
+    display: none;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.section-title h2 {
+    font-size: 36px;
+    color: var(--dark);
+    display: inline-block;
+}
+
+.section-title h2:after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background-color: var(--primary);
+    margin: 10px auto 0;
+}
+
+.form-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    padding: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+.form-row {
+    display: flex;
+    gap: 20px;
+}
+
+.form-row .form-group {
+    flex: 1;
+}
+
+.radio-group {
+    display: flex;
+    gap: 20px;
+}
+
+.radio-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.submit-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.submit-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+.cancel-btn {
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    padding: 14px 30px;
+    border-radius: 4px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 10px;
+}
+
+.cancel-btn:hover {
+    background-color: #5a6268;
+}
+
+.developer-btn {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.developer-btn:hover {
+    background-color: #218838;
+}
+
+/* Pizza Grid Section */
+.pizza-grid-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.category-filter {
+    display: flex;
+    gap: 10px;
+    margin: 20px 0;
+    justify-content: center;
+}
+
+.filter-btn {
+    padding: 10px 25px;
+    background-color: #f8f9fa;
+    border: 2px solid #e9ecef;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active {
+    background-color: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+.pizza-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.pizza-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.pizza-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.pizza-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.pizza-category {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(255,255,255,0.9);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.pizza-category.veg {
+    color: #4CAF50;
+}
+
+.pizza-category.non-veg {
+    color: #f44336;
+}
+
+.pizza-info {
+    padding: 20px;
+}
+
+.pizza-info h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.pizza-desc {
+    color: var(--gray);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.pizza-ingredients {
+    color: var(--gray);
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.pizza-prices {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+}
+
+.price-option {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.pizza-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.size-select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.add-to-cart-btn {
+    background-color: var(--primary);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--primary-dark);
+}
+
+/* Loading Styles */
+.loading {
+    text-align: center;
+    padding: 40px;
+    font-size: 18px;
+    color: var(--gray);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.loading i {
+    color: var(--primary);
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Menu Section */
+.menu-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 30px;
+}
+
+/* Drinks Section */
+.drinks-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.drinks-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.drink-card {
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.drink-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.drink-img {
+    height: 200px;
+    overflow: hidden;
+}
+
+.drink-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.drink-info {
+    padding: 20px;
+}
+
+.drink-info h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.drink-info p {
+    color: var(--gray);
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.drink-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+/* About Section */
+.about-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    align-items: center;
+}
+
+.about-text h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: var(--gray);
+}
+
+.about-image img {
+    width: 50%;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 60px 0;
+    background-color: white;
+}
+
+.contact-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-item i {
+    color: var(--primary);
+    font-size: 20px;
+    margin-top: 5px;
+}
+
+.info-item h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.info-item p {
+    color: var(--gray);
+    line-height: 1.6;
+}
+
+.contact-form h3 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: var(--dark);
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Footer */
+footer {
+    background-color: var(--dark);
+    color: white;
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.footer-section .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.footer-section .logo i {
+    color: var(--secondary);
+    font-size: 24px;
+}
+
+.footer-section .logo h3 {
+    font-size: 20px;
+}
+
+.footer-section p {
+    color: #bbb;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background-color: #444;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.social-links a:hover {
+    background-color: var(--primary);
+}
+
+.footer-section h4 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-section h4:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 40px;
+    height: 3px;
+    background-color: var(--primary);
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+    color: #bbb;
+}
+
+.footer-section ul li i {
+    margin-right: 10px;
+    color: var(--secondary);
+}
+
+.footer-section a {
+    color: #bbb;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.footer-section a:hover {
+    color: white;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid #444;
+    color: #bbb;
+    font-size: 14px;
+}
+
+.footer-bottom i {
+    color: var(--primary);
+    margin: 0 5px;
+}
+
+/* Cart Icon */
+.cart-icon {
+    position: relative;
+    cursor: pointer;
+    font-size: 1.5rem;
+    color: white;
+    margin-right: 20px;
+}
+
+.cart-count {
+    position: absolute;
+    top: -8px;
+    right: -8px;
+    background: var(--primary);
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    min-width: 18px;
+    text-align: center;
+}
+
+/* Cart Modal */
+.cart-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.cart-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 500px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.cart-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-header h3 {
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.close-cart {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+.cart-items {
+    padding: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.item-info h4 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.item-info p {
+    font-size: 14px;
+    color: var(--gray);
+}
+
+.item-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-btn {
+    background: #f0f0f0;
+    border: none;
+    width: 30px;
+    height: 30px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.quantity {
+    min-width: 30px;
+    text-align: center;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: var(--primary);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-top: 2px solid #eee;
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.cart-actions {
+    display: flex;
+    gap: 15px;
+    padding: 0 20px 20px;
+}
+
+.btn-primary, .btn-secondary {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background-color: var(--primary);
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-secondary {
+    background-color: #e9ecef;
+    color: var(--dark);
+}
+
+.btn-secondary:hover {
+    background-color: #dee2e6;
+}
+
+/* Checkout Modal */
+.checkout-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1001;
+}
+
+.checkout-content {
+    background-color: white;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+.checkout-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.checkout-header h3 {
+    font-size: 24px;
+    color: var(--dark);
+}
+
+.close-checkout {
+    background: none;
+    border: none;
+    font-size: 28px;
+    cursor: pointer;
+    color: var(--gray);
+}
+
+#checkout-form {
+    padding: 20px;
+}
+
+#checkout-form .form-group {
+    margin-bottom: 15px;
+}
+
+#checkout-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: var(--dark);
+}
+
+#checkout-form input,
+#checkout-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.order-summary {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.order-summary h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+#order-items-summary {
+    margin-bottom: 15px;
+}
+
+.order-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+}
+
+.order-total {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 15px;
+    border-top: 2px solid #ddd;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+/* Confirmation Modal */
+.confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1002;
+}
+
+.confirmation-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+}
+
+.confirmation-icon {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.confirmation-content h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.confirmation-content p {
+    color: var(--gray);
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+.confirmation-actions {
+    display: flex;
+    gap: 15px;
+}
+
+/* Notification Container */
+#notification-container {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+}
+
+.notification {
+    background: #4CAF50;
+    color: white;
+    padding: 15px 25px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    animation: slideIn 0.3s ease;
+}
+
+.notification.error {
+    background: #f44336;
+}
+
+.notification i {
+    font-size: 20px;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero h2 {
+        font-size: 36px;
+    }
+    
+    .hero p {
+        font-size: 18px;
+    }
+    
+    .form-row {
+        flex-direction: column;
+        gap: 0;
+    }
+    
+    .about-content,
+    .contact-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .pizza-grid,
+    .menu-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+    
+    .drinks-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    
+    .footer-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .cart-actions,
+    .confirmation-actions {
+        flex-direction: column;
+    }
+    
+    .pizza-actions {
+        flex-direction: column;
+    }
+    
+    .size-select,
+    .add-to-cart-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h2 {
+        font-size: 28px;
+    }
+    
+    .hero p {
+        font-size: 16px;
+    }
+    
+    .section-title h2 {
+        font-size: 28px;
+    }
+    
+    .pizza-grid,
+    .menu-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .category-filter {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .filter-btn {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+/* Active states for modals */
+.cart-modal.active,
+.checkout-modal.active,
+.confirmation-modal.active {
+    display: flex;
+}
+
+/* No items message */
+.no-items {
+    text-align: center;
+    padding: 40px;
+    color: var(--gray);
+    font-size: 18px;
+    grid-column: 1 / -1;
+}
+/* Reservation Section */
+.reservation-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+}
+
+.reservation-form-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#reservation-form {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+#reservation-form select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+}
+
+.reservation-info {
+    padding: 30px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.reservation-info h3 {
+    color: var(--dark);
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--primary);
+}
+
+.reservation-info ul {
+    list-style: none;
+    margin-bottom: 30px;
+}
+
+.reservation-info li {
+    padding: 10px 0;
+    border-bottom: 1px solid #eee;
+    color: var(--gray);
+}
+
+.reservation-info li:before {
+    content: "✓";
+    color: var(--primary);
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.contact-info {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-info i {
+    color: var(--primary);
+}
+
+/* Reservation Confirmation Modal */
+.reservation-confirmation-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+    z-index: 1003;
+}
+
+.reservation-confirmation-modal.active {
+    display: flex;
+}
+
+.reservation-confirmation-modal .confirmation-content {
+    background-color: white;
+    border-radius: 8px;
+    padding: 40px;
+    text-align: center;
+    max-width: 500px;
+    width: 90%;
+}
+
+.reservation-confirmation-modal .confirmation-icon {
+    font-size: 48px;
+    color: #4CAF50;
+    margin-bottom: 20px;
+}
+
+.reservation-confirmation-modal h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    color: var(--dark);
+}
+
+.reservation-confirmation-modal p {
+    color: var(--gray);
+    margin-bottom: 25px;
+    line-height: 1.6;
+    text-align: left;
+}
+
+/* Admin Reservations Panel (Optional) */
+.admin-reservations {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.reservations-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.reservations-table th {
+    background-color: var(--dark);
+    color: white;
+    padding: 12px;
+    text-align: left;
+}
+
+.reservations-table td {
+    padding: 12px;
+    border-bottom: 1px solid #eee;
+}
+
+.reservations-table .status-pending {
+    color: #ff9800;
+    font-weight: bold;
+}
+
+.reservations-table .status-confirmed {
+    color: #4CAF50;
+    font-weight: bold;
+}
+
+.reservations-table .status-cancelled {
+    color: #f44336;
+    font-weight: bold;
+}
+
+.reservations-table .action-btn {
+    padding: 5px 10px;
+    margin: 0 5px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.reservations-table .confirm-btn {
+    background-color: #4CAF50;
+    color: white;
+}
+
+.reservations-table .cancel-btn {
+    background-color: #f44336;
+    color: white;
+}
+/* About Us Modal Styles */
+.about-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 10000;
+    overflow-y: auto;
+    padding: 20px;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.about-modal.active {
+    display: block;
+}
+
+.about-modal-content {
+    position: relative;
+    background-color: #fff;
+    margin: 40px auto;
+    padding: 40px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 15px;
+    box-shadow: 0 10px 50px rgba(0,0,0,0.3);
+    animation: modalSlideIn 0.4s ease-out;
+}
+
+.close-about-modal {
+    position: absolute;
+    top: 20px;
+    right: 25px;
+    font-size: 36px;
+    font-weight: normal;
+    color: #333;
+    cursor: pointer;
+    transition: color 0.3s, transform 0.3s;
+    background: none;
+    border: none;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    z-index: 10001;
+}
+
+.close-about-modal:hover {
+    color: #e74c3c;
+    transform: scale(1.1);
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.about-images {
+    flex: 1;
+    min-width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.about-image {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-image p {
+    padding: 15px;
+    background: #f8f8f8;
+    margin: 0;
+    text-align: center;
+    font-style: italic;
+    color: #666;
+}
+
+.about-section h3 {
+    color: #e74c3c;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 24px;
+    border-bottom: 2px solid #f0f0f0;
+    padding-bottom: 10px;
+}
+
+.about-text p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.values-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.values-list li {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.values-list i {
+    color: #27ae60;
+    font-size: 20px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 20px;
+    margin: 40px 0;
+    padding: 30px;
+    background: linear-gradient(135deg, #f8f8f8, #eaeaea);
+    border-radius: 10px;
+}
+
+.stat {
+    text-align: center;
+    padding: 20px;
+}
+
+.stat h4 {
+    font-size: 36px;
+    color: #e74c3c;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.stat p {
+    color: #666;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Responsive adjustments for About Us Modal */
+@media (max-width: 768px) {
+    .about-modal-content {
+        margin: 20px auto;
+        padding: 25px;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .close-about-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 28px;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-stats {
+        grid-template-columns: 1fr;
+    }
+    
+    .stat h4 {
+        font-size: 28px;
+    }
+    
+    .about-modal-content {
+        padding: 20px;
+        margin: 10px auto;
+    }
+}
+
+/* Ensure modal is above all other elements */
+.about-modal {
+    z-index: 10000;
+}
